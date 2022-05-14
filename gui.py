@@ -135,4 +135,10 @@ class GUI:
             for x in listo:
                 fulltext += lines[x] + '\n'
             self.label_results2.config(text=fulltext)
-            
+
+    def __str__(self):
+        """
+        Method used to return the program status.
+        :return: Program status.
+        """
+        return f"Name entry = {self.name.get()}, Age entry = {self.age.get()}, Radio button = {self.radio.get()}"

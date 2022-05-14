@@ -13,6 +13,7 @@ def main():
     window.resizable(False, True)
     window.mainloop()
     
+    
 
 if __name__ == '__main__':
     main()
