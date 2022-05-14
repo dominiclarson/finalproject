@@ -1,7 +1,11 @@
 from gui import *
 
-#add search method
 def main():
+    """
+    Method used to initialize GUI.
+    :param window: Window of GUI.
+    :param widgets: Widgets of GUI.
+    """
     window = Tk()
     widgets = GUI(window)
     window.title('Final Project')

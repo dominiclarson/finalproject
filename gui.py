@@ -3,10 +3,17 @@ import csv
 
 
 class GUI:
+    """
+    Class representing details for a GUI object.
+    """
     def __init__(self, window):
         """
-        - The code provided is meant to guide you on the dimensions used and variable names standards.
-        - Add the widgets responsible for the name, status, and save button.
+        Constructor to create initial state of a GUI object.
+        :param window: Window of GUI.
+        :param age: Age value input by user.
+        :param name: Name value input by user.
+        :param radio: Button pressed by user.
+        :param search: Search variable input by user.
         """
         self.window = window
         
@@ -72,16 +79,10 @@ class GUI:
 
     def clicked(self):
         """
-        - This method should only be called when the save button is clicked.
-        - Retrieve the name, age, and status values.
-        x The age must be doubled (e.g. if someone entered 5 for age, their age would be stored as 10).
-        - Determine the person status based off the value of the radio button selected.
-
-        - Open the records.csv file and append the new person's details.
-        - I suggest first viewing the csv file's contents to understand how your data should be sent to it.
-
-        - Clear the name and age values that were entered in the GUI.
-        - Make sure you clear the status value (i.e, No status value should be selected).
+        Method called when save button is clicked and inputs entries from user into CSV file.
+        :param age: Age value input by user.
+        :param name: Name value input by user.
+        :param radio: Button pressed by user.
         """
         if self.name.get() != '' and self.age.get() != '' and self.radio.get() != 'None selected':
             try:
@@ -109,6 +110,13 @@ class GUI:
         self.radio.set('None selected')
 
     def find(self):
+        """
+        Method used to find name items in a CSV file.
+        :param listo: List of indexes where searched names were found.
+        :param names: List of names in column 0 of the CSV file.
+        :param fulltext: Full string to be displayed in the GUI.
+        :param lines: All lines from CSV file.
+        """
         with open('records.csv', mode='r') as file:
             listo = []
             names = []
